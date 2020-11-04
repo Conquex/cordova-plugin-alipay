@@ -17,15 +17,14 @@
 #pragma mark "API"
 - (void)pluginInitialize {
     CDVViewController *viewController = (CDVViewController *)self.viewController;
-    app_id = [viewController.settings objectForKey:@"alipayid"];
+    app_id = @"kodypayapp";
 }
 
 - (void)payment:(CDVInvokedUrlCommand*)command
 {
     callbackId = command.callbackId;
     NSString* orderString = [command.arguments objectAtIndex:0];
-    NSString* appScheme = [NSString stringWithFormat:@"ali%@", app_id];
-    [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+    [[AlipaySDK defaultService] payOrder:orderString fromScheme:app_id callback:^(NSDictionary *resultDic) {
         CDVPluginResult* pluginResult;
         
         if ([[resultDic objectForKey:@"resultStatus"]  isEqual: @"9000"]) {
@@ -42,7 +41,7 @@
 - (void)handleOpenURL:(NSNotification *)notification {
     NSURL* url = [notification object];
     
-    if ([url isKindOfClass:[NSURL class]] && [url.scheme isEqualToString:[NSString stringWithFormat:@"ali%@", app_id]])
+    if ([url isKindOfClass:[NSURL class]] && [url.scheme isEqualToString: app_id])
     {
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             
