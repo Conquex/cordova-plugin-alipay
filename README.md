@@ -1,4 +1,4 @@
-# cordova-plugin-alipay-v2（更新至alipaySdk-15.6.5-20190718211148.aar）
+# cordova-plugin-alipay-v2（更新至alipaySdk-15.7.4-20200228192259.aar）
 支付宝的cordova插件其实在github上已经有很多了，但是都已经是以前的版本了。
 在2016年11月的时候支付宝进行了一次更新，支付宝的SDK升级到2.0版本。
 以前在app中使用支付宝进行支付叫做移动支付，11月之后更名为APP支付。
@@ -6,7 +6,7 @@
 __本插件仅支持《APP支付》，不支持移动支付__
 
 ## 2019-07-31 更新日志
-- Android SDK 更新至alipaySdk-15.6.5-20190718211148.aar。
+- Android SDK 更新至alipaySdk-15.7.4-20200228192259.aar。
 - iOS SDK 已适配 iPhoneX，支持 IPv6_only 网络和 ATS 安全标准。
 
 ## 2018-11-28 更新日志
@@ -57,7 +57,7 @@ cordova.plugins.alipay.payment(payInfo, (e) => {
 ***
 # 支持平台
 
-1. android （alipaySdk-15.6.5-20190718211148.aar）
+1. android （alipaySdk-15.7.4-20200228192259.aar）
 2. iOS （Xcode版本须大于7.0，iOS版本须大于或等于9.0）
 
 ***
